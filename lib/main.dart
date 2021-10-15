@@ -1,17 +1,8 @@
-
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:testappwork/home.dart';
+import 'package:testappwork/page.dart';
 
 
-class MyHttpOverrides extends HttpOverrides{
-  @override
-  HttpClient createHttpClients(SecurityContext context){
-    return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
-  }
-}
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
@@ -24,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: PageOne(),
     );
   }
 }
